@@ -1,0 +1,26 @@
+{
+  "name": "rezeptplaner",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "scripts": {
+    "postinstall": "cd ./client && npm i && cd ../server && npm i",
+    "dev": "npm run open && concurrently --names Vite,Nest --prefix-colors blue,red --kill-others \"npm run vite:dev\" \"npm run nest:dev\"",
+    "build": "npm run vite:build && npm run nest:build",
+    "start": "cd server && node dist/main",
+    "open": "run-script-os",
+    "vite:dev": "cd client && npm run dev",
+    "nest:dev": "cd server && npm run start:dev",
+    "vite:build": "cd client && npm run build",
+    "nest:build": "cd server && npm run build",
+    "open:win32": "cmd.exe /C \"START http://localhost:5173\"",
+    "open:linux": "xdg-open \"http://localhost:5173\"",
+    "open:darwin": "open \"http://localhost:5173\""
+  },
+  "dependencies": {
+    "@nestjs/config": "^4.0.2",
+    "concurrently": "^9.2.1",
+    "run-script-os": "^1.1.6"
+  }
+}
