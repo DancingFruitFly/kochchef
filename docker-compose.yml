@@ -1,8 +1,8 @@
 services:
-  rezeptplaner:
+  kochchef:
     build: .
-    image: rezeptplaner
-    container_name: rezeptplaner
+    image: kochchef
+    container_name: kochchef
     restart: unless-stopped
     ports:
       - 3000:3000

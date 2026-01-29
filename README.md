@@ -1,4 +1,4 @@
-# Rezeptplaner
+# Kochchef
 
 ## Stack
 
