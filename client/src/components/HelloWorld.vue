@@ -6,10 +6,10 @@ defineProps<{ msg: string }>()
 const count = ref(0)
 
 const getCount = async () => {
-  count.value = parseInt(await fetch("/api/v1/counter").then((r) => r.text()))
+  count.value = parseInt(await fetch("/api/counter").then((r) => r.text()))
 }
 const incrementCount = async () => {
-  count.value = parseInt(await fetch("/api/v1/counter/inc").then((r) => r.text()))
+  count.value = parseInt(await fetch("/api/counter/inc").then((r) => r.text()))
 }
 
 onMounted(() => {

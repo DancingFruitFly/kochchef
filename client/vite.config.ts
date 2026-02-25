@@ -5,10 +5,12 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [vue()],
   server: {
-    // Tell Vite's dev server to proxy API requests to NestJS:
+    host: true,
+    port: 5173,
+    strictPort: true,
     proxy: {
       "/api": {
-        target: "http://localhost:3000/",
+        target: "http://backend:3000", 
         changeOrigin: true,
         secure: false,
       },

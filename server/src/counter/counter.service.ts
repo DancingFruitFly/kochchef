@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Counter } from 'src/schemas/counter.schema';
+import { Counter } from 'src/counter/schemas/counter.schema';
 
 @Injectable()
 export class CounterService {
