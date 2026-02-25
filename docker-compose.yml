@@ -1,17 +1,28 @@
 services:
-  kochchef:
-    build: .
-    image: kochchef
-    container_name: kochchef
+  mongo:
+    image: mongo:7
+    container_name: kochchef_mongo_prod
+    restart: unless-stopped
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
+  backend:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    container_name: kochchef_app_prod
     restart: unless-stopped
     ports:
-      - 3000:3000
+      - "3000:3000"
     environment:
-      MONGODB_URI: "mongodb://mongodb/nest"
-  mongodb-community-server:
-    container_name: mongodb
-    image: mongodb/mongodb-community-server:latest
-    #ports:
-    #  - 27017:27017
-    #volumes:
-    #  - ./mongodb:/data/db
+      NODE_ENV: production
+      PORT: 3000
+      MONGO_URI: mongodb://root:example@mongo:27017/kochchef?authSource=admin
+    depends_on:
+      - mongo
+
+volumes:
+  mongo_data:
