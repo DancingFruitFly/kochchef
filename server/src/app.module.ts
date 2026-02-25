@@ -3,6 +3,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { CounterModule } from './counter/counter.module';
 import { join } from 'path';
+import { RecipeModule } from './recipe/recipe.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { join } from 'path';
       exclude: ['/api*'],
     }),
     MongooseModule.forRoot(process.env.MONGO_URI as string),
+    RecipeModule,
   ],
   controllers: [],
   providers: [],
