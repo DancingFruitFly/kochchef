@@ -3,3 +3,12 @@ node_modules
 dist
 .DS_Store
 mongodb
+#IntelliJ
+/.idea/.gitignore
+/.idea/jsLibraryMappings.xml
+/.idea/kochchef.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/prettier.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/vcs.xml
