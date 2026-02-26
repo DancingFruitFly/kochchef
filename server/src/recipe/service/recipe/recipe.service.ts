@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { CreateRecipeDto } from './dto/create-recipe.dto';
-import { UpdateRecipeDto } from './dto/update-recipe.dto';
+import { CreateRecipeDto } from '../../dto/recipe/create-recipe.dto';
+import { UpdateRecipeDto } from '../../dto/recipe/update-recipe.dto';
 
 @Injectable()
 export class RecipeService {
@@ -12,15 +12,15 @@ export class RecipeService {
     return `This action returns all recipe`;
   }
 
-  findOne(id: number) {
+  findOne(id: bigint) {
     return `This action returns a #${id} recipe`;
   }
 
-  update(id: number, updateRecipeDto: UpdateRecipeDto) {
+  update(id: bigint, updateRecipeDto: UpdateRecipeDto) {
     return `This action updates a #${id} recipe`;
   }
 
-  remove(id: number) {
+  remove(id: bigint) {
     return `This action removes a #${id} recipe`;
   }
 }
