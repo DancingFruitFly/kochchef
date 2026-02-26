@@ -1,4 +1,4 @@
-import {Role} from './role.entity';
+import { Role } from './role.entity';
 
 export class User {
   id: bigint;
