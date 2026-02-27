@@ -5,10 +5,10 @@ import { Recipe } from '../../entities/recipe.entity';
 
 @Injectable()
 export class RecipeService {
-  create(createRecipeDto: CreateRecipeDto): Promise<CreateRecipeDto> {
-    const createdRecipe: CreateRecipeDto = this.create(createRecipeDto).then(
-      (recipe) => recipe,
-    );
+  async create(createRecipeDto: CreateRecipeDto): Promise<CreateRecipeDto> {
+    const createdRecipe: CreateRecipeDto = await this.create(
+      createRecipeDto,
+    ).then((recipe) => recipe);
     return Promise.resolve(createdRecipe);
   }
 

@@ -5,8 +5,8 @@ import { User } from '../../entities/user.entity';
 
 @Injectable()
 export class UserService {
-  create(createUserDto: CreateUserDto): Promise<CreateUserDto> {
-    const createdUser: CreateUserDto = this.create(createUserDto).then(
+  async create(createUserDto: CreateUserDto): Promise<CreateUserDto> {
+    const createdUser: CreateUserDto = await this.create(createUserDto).then(
       (user) => user,
     );
     return Promise.resolve(createdUser);
