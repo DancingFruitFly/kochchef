@@ -15,8 +15,8 @@
     "vite:build": "cd client && npm run build",
     "nest:build": "cd server && npm run build",
     "open:win32": "cmd.exe /C \"START http://localhost:5173\"",
-    "open:linux": "xdg-open \"http://localhost:5173\"",
-    "open:darwin": "open \"http://localhost:5173\""
+    "open:linux": "xdg-open \"http://localhost:5173\" || true",
+    "open:darwin": "open \"http://localhost:5173\" || true"
   },
   "dependencies": {
     "@nestjs/config": "^4.0.2",
