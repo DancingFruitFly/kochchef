@@ -1,26 +1,38 @@
 import { Injectable } from '@nestjs/common';
 import { CreateRecipeDto } from '../../dto/recipe/create-recipe.dto';
 import { UpdateRecipeDto } from '../../dto/recipe/update-recipe.dto';
+import { Recipe } from '../../entities/recipe.entity';
 
 @Injectable()
 export class RecipeService {
-  create(createRecipeDto: CreateRecipeDto) {
-    return 'This action adds a new recipe';
+  create(createRecipeDto: CreateRecipeDto): Promise<CreateRecipeDto> {
+    const createdRecipe: CreateRecipeDto = this.create(createRecipeDto).then(
+      (recipe) => recipe,
+    );
+    return Promise.resolve(createdRecipe);
   }
 
-  findAll() {
-    return `This action returns all recipe`;
+  findAll(): Promise<Recipe[]> {
+    const foundRecipes = this.findAll().then((recipes) => recipes);
+    return Promise.resolve(foundRecipes);
   }
 
-  findOne(id: bigint) {
-    return `This action returns a #${id} recipe`;
+  async findOne(id: string): Promise<Recipe> {
+    const foundRecipe: Recipe = await this.findOne(id).then((recipe) => recipe);
+    return Promise.resolve(foundRecipe);
   }
 
-  update(id: bigint, updateRecipeDto: UpdateRecipeDto) {
-    return `This action updates a #${id} recipe`;
+  async update(id: string, updateRecipeDto: UpdateRecipeDto): Promise<Recipe> {
+    const updatedRecipe: Recipe = await this.update(id, updateRecipeDto).then(
+      (recipe) => recipe,
+    );
+    return Promise.resolve(updatedRecipe);
   }
 
-  remove(id: bigint) {
-    return `This action removes a #${id} recipe`;
+  async remove(id: string): Promise<Recipe> {
+    const removedRecipe: Recipe = await this.remove(id).then(
+      (recipe) => recipe,
+    );
+    return Promise.resolve(removedRecipe);
   }
 }

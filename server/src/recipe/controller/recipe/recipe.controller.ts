@@ -10,6 +10,7 @@ import {
 import { RecipeService } from '../../service/recipe/recipe.service';
 import { CreateRecipeDto } from '../../dto/recipe/create-recipe.dto';
 import { UpdateRecipeDto } from '../../dto/recipe/update-recipe.dto';
+import { Recipe } from '../../entities/recipe.entity';
 
 @Controller('recipe')
 export class RecipeController {
@@ -21,22 +22,22 @@ export class RecipeController {
   }
 
   @Get()
-  findAll() {
+  findAll(): Promise<Recipe[]> {
     return this.recipeService.findAll();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.recipeService.findOne(+id);
+    return this.recipeService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateRecipeDto: UpdateRecipeDto) {
-    return this.recipeService.update(+id, updateRecipeDto);
+    return this.recipeService.update(id, updateRecipeDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.recipeService.remove(+id);
+    return this.recipeService.remove(id);
   }
 }
