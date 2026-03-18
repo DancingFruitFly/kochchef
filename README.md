@@ -54,5 +54,5 @@ services:
       - 27017:27017
 ```
 
-Die Umgebungsvariable `MONGODB_URI` kann mit einer `.env`-Datei gesetzt werden.
+Die Umgebungsvariable `MONGO_URI` kann mit einer `.env`-Datei gesetzt werden.
 Siehe `./server/.env.example`.
