@@ -30,6 +30,41 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/login/': RouteRecordInfo<
+      '/login/',
+      '/login',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/my-recipes/': RouteRecordInfo<
+      '/my-recipes/',
+      '/my-recipes',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/recipes/[id]/': RouteRecordInfo<
+      '/recipes/[id]/',
+      '/recipes/:id',
+      { id: ParamValue<true> },
+      { id: ParamValue<false> },
+      | never
+    >,
+    '/recipes/[id]/edit': RouteRecordInfo<
+      '/recipes/[id]/edit',
+      '/recipes/:id/edit',
+      { id: ParamValue<true> },
+      { id: ParamValue<false> },
+      | never
+    >,
+    '/register/': RouteRecordInfo<
+      '/register/',
+      '/register',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
   }
 
   /**
@@ -46,6 +81,36 @@ declare module 'vue-router/auto-routes' {
     'src/pages/index.vue': {
       routes:
         | '/'
+      views:
+        | never
+    }
+    'src/pages/login/index.vue': {
+      routes:
+        | '/login/'
+      views:
+        | never
+    }
+    'src/pages/my-recipes/index.vue': {
+      routes:
+        | '/my-recipes/'
+      views:
+        | never
+    }
+    'src/pages/recipes/[id]/index.vue': {
+      routes:
+        | '/recipes/[id]/'
+      views:
+        | never
+    }
+    'src/pages/recipes/[id]/edit.vue': {
+      routes:
+        | '/recipes/[id]/edit'
+      views:
+        | never
+    }
+    'src/pages/register/index.vue': {
+      routes:
+        | '/register/'
       views:
         | never
     }

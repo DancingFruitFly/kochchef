@@ -1,10 +1,9 @@
-<template>
-  <RouterView/>
-</template>
-
-<script lang="ts">
-    export default {
-        
-    }
+<script setup lang="ts">
+import Layout from "@/components/Layout.vue";
 </script>
 
+<template>
+  <Layout>
+    <RouterView />
+  </Layout>
+</template>
